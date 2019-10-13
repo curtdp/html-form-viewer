@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Ответ на форму</h1>
+  {% if getRequest %}
+  <h2>Get</h2>
+  <ul>
+    {% for property, value in getRequest %}
+      <li>{{ property }} — {{ value }}</li>
+    {% endfor %}
+  </ul>
+  {% elif postRequest %}
+  <h2>Post</h2>
+  <ul>
+    {% for property, value in postRequest %}
+      <li>{{ property }} — {{ value }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</body>
+</html>
