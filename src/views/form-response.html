@@ -1,0 +1,19 @@
+{% extends "./_base.html" %}
+{% block maincontent %}
+  <h1 class="text-6xl">Просмотр запроса</h1>
+  {% if getRequest %}
+  <h2 class="text-4xl">Get</h2>
+  <ul>
+    {% for property, value in getRequest %}
+      <li>{{ property }} — {{ value }}</li>
+    {% endfor %}
+  </ul>
+  {% elif postRequest %}
+  <h2 class="text-4xl">Post</h2>
+  <ul>
+    {% for property, value in postRequest %}
+      <li>{{ property }} — {{ value }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endblock %}

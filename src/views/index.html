@@ -1,0 +1,18 @@
+{% extends "./_base.html" %}
+{% block maincontent %}
+  <h1 class="text-6xl">Формы</h1>
+  <h2 class="text-4xl">Get</h2>
+  <form class="text-xl" action="/form">
+    <input class="my-2 p-2 border border-black rounded" placeholder="Имя" type="text" name="username"><br>
+    <input class="my-2 p-2 border border-black rounded" placeholder="Возраст" type="number" name="age"><br>
+    <input class="my-2 p-2 border border-black rounded" placeholder="Пароль" type="password" name="password"><br>
+    <button class="my-2 py-2 px-4 border border-blue-700 bg-blue-200 rounded text-blue-900">Отправить</button>
+  </form>
+  <h2 class="text-4xl">Post</h2>
+  <form class="text-xl" action="/form" method="POST">
+    <input class="my-2 p-2 border border-black rounded" placeholder="Имя" type="text" name="username"><br>
+    <input class="my-2 p-2 border border-black rounded" placeholder="Возраст" type="number" name="age"><br>
+    <input class="my-2 p-2 border border-black rounded" placeholder="Пароль" type="password" name="password"><br>
+    <button class="my-2 py-2 px-4 border border-blue-700 bg-blue-200 rounded text-blue-900">Отправить</button>
+  </form>
+{% endblock %}

@@ -9,19 +9,20 @@ nunjucks.configure({
 });
 
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use('/static', express.static(path.join(__dirname, 'public')))
 
 app.get('/', function (req, res) {
-  res.render(path.join(__dirname, '/index.html'))
+  res.render(path.join(__dirname, 'views/index.html'))
 });
 
 app.get('/form', function (req, res) {
-  res.render(path.join(__dirname, '/form-response.html'), {
+  res.render(path.join(__dirname, 'views/form-response.html'), {
     getRequest: req.query
   })
 })
 
 app.post('/form', function (req, res) {
-  res.render(path.join(__dirname, '/form-response.html'), {
+  res.render(path.join(__dirname, 'views/form-response.html'), {
     postRequest: req.body
   })
 })
